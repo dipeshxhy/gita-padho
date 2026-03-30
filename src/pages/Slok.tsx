@@ -57,7 +57,6 @@ function Slok() {
   function goBack() {
     navigate(-1);
   }
-  console.log(slokData);
 
   return (
     <div className="min-h-screen">
@@ -81,7 +80,7 @@ function Slok() {
         <div className="divider"></div>
         <div className="max-w-2xl container mx-auto mb-6">
           <h2 className="text-2xl text-center">
-            {slokData?.chinmay.author} जी टीका
+            {slokData?.chinmay?.author} जी टीका
           </h2>
           <p className="text-center text-md p-4 leading-relaxed tracking-wide">
             {slokData?.chinmay.hc}
@@ -94,17 +93,19 @@ function Slok() {
           <p className="text-center text-md p-4 leading-loose tracking-wide ">
             {slokData?.rams.hc}
           </p>
-          <p className="text-center text-md p-4">{slokData?.rams.ht}</p>
+          <p className="text-center text-md p-4">{slokData?.rams?.ht}</p>
         </div>
-        <div className="max-w-2xl container mx-auto">
-          <h2 className="text-2xl text-center">
-            {slokData?.prabhu.author} जी टीका
-          </h2>
-          <p className="text-center text-md p-4 leading-loose tracking-wide ">
-            {slokData?.prabhu.ec}
-          </p>
-          <p className="text-center text-md p-4">{slokData?.prabhu.et}</p>
-        </div>
+        {slokData?.prabhu && (
+          <div className="max-w-2xl container mx-auto">
+            <h2 className="text-2xl text-center">
+              {slokData?.prabhu?.author} जी टीका
+            </h2>
+            <p className="text-center text-md p-4 leading-loose tracking-wide ">
+              {slokData?.prabhu?.ec}
+            </p>
+            <p className="text-center text-md p-4">{slokData?.prabhu?.et}</p>
+          </div>
+        )}
       </div>
     </div>
   );
