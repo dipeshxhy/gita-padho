@@ -35,10 +35,18 @@ const Footer = () => {
             Made with ❤️ for learning & devotion
           </p>
           <div className="flex gap-3 text-sm">
-            <a href="#" className="hover:text-amber-400">
+            <a
+              href="https://github.com/dipeshxhy/gita-padho"
+              target="_blank"
+              className="hover:text-amber-400"
+            >
               GitHub
             </a>
-            <a href="#" className="hover:text-amber-400">
+            <a
+              href="https://www.linkedin.com/in/dipeshchy"
+              target="_blank"
+              className="hover:text-amber-400"
+            >
               LinkedIn
             </a>
           </div>

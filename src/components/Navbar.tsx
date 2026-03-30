@@ -17,6 +17,9 @@ const Navbar = () => {
           <Link to="/chapters" className="hover:text-amber-400 transition">
             Chapters
           </Link>
+          <Link to="/about" className="hover:text-amber-400 transition">
+            About
+          </Link>
           <Link
             to={`https://x.com/dipesschaudhary`}
             target="_blank"

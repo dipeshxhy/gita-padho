@@ -8,6 +8,7 @@ import Slok from "./pages/Slok";
 import Footer from "./components/Footer";
 import AllChapters from "./pages/AllChapters";
 import Navbar from "./components/Navbar";
+import About from "./pages/About";
 
 function App() {
   const [chapters, setChapters] = useState<ChapterResponse[]>([]);
@@ -48,6 +49,13 @@ function App() {
         />
         <Route path="/slok/:chapterNumber/:slokNumber" element={<Slok />} />
         <Route path="/chapters" element={<AllChapters chapters={chapters} />} />
+        <Route path="/about" element={<About />} />
+        <Route
+          path="*"
+          element={
+            <h1 className="text-2xl text-center p-10">Page Not Found</h1>
+          }
+        />
       </Routes>
       <Footer />
     </>
