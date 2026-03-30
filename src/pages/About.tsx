@@ -9,12 +9,12 @@ const About = () => {
       <div className="max-w-4xl mx-auto">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-bold text-center text-amber-400 mb-6">
-          📖 About Geeta Padho
+          📖 About Gita Padho
         </h1>
 
         {/* Intro */}
         <p className="text-gray-300 text-center mb-8 leading-relaxed">
-          Geeta Padho is a simple and modern web application designed to help
+          Gita Padho is a simple and modern web application designed to help
           users explore the timeless wisdom of the Bhagavad Gita in an easy and
           interactive way.
         </p>
@@ -64,8 +64,9 @@ const About = () => {
               🚀 Built for Learning
             </h3>
             <p className="text-sm text-gray-400">
-              Created as a developer project to practice full-stack skills and
-              UI design.
+              Main Motive to see all slokas of श्रीमद् भगवद् गीता in one place
+              and learned about it with beautiful explanation in hindi and
+              english
             </p>
           </div>
         </div>
@@ -75,9 +76,7 @@ const About = () => {
           <h3 className="text-lg font-semibold text-amber-400 mb-2">
             👨‍💻 Developer
           </h3>
-          <p className="text-gray-400 text-sm">
-            Built with ❤️ by Dipesh Chaudhary
-          </p>
+          <p className="text-gray-400 text-sm">Built with ❤️ (राधे राधे )</p>
         </div>
       </div>
     </div>

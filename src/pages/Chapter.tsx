@@ -3,14 +3,27 @@ import { NavLink, useParams } from "react-router-dom";
 import { getChapter, type ChapterResponse } from "../utils/api";
 
 function Chapter() {
-  const [chapterData, setChapterData] = useState<ChapterResponse | null>(null);
   const { chapterNumber } = useParams();
-  console.log(chapterNumber);
+
+  const [chapterData, setChapterData] = useState<ChapterResponse | null>(() => {
+    const stored = localStorage.getItem(`chapter_${chapterNumber}`);
+    return stored ? JSON.parse(stored) : null;
+  });
+
   useEffect(() => {
+    if (!chapterNumber) return;
+
+    const key = `chapter_${chapterNumber}`;
+
+    // If already cached → skip API
+    if (chapterData) return;
+
     getChapter(Number(chapterNumber)).then((data) => {
       setChapterData(data);
+      localStorage.setItem(key, JSON.stringify(data));
     });
-  }, [chapterNumber]);
+  }, [chapterNumber, chapterData]);
+
   if (!chapterData) {
     return (
       <div>

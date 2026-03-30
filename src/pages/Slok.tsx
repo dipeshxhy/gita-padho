@@ -27,11 +27,24 @@ function Slok() {
   const [slokData, setSlokData] = useState<SlokDataInterface | null>(null);
   const { chapterNumber, slokNumber } = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
+    if (!chapterNumber || !slokNumber) return;
+
+    const key = `verse_${chapterNumber}_${slokNumber}`;
+
+    const stored = localStorage.getItem(key);
+
+    if (stored) {
+      setSlokData(JSON.parse(stored));
+      return;
+    }
+
     getVerse(Number(chapterNumber), Number(slokNumber)).then((data) => {
       setSlokData(data);
+      localStorage.setItem(key, JSON.stringify(data));
     });
-  }, [slokNumber, chapterNumber]);
+  }, [chapterNumber, slokNumber]);
 
   if (!slokData) {
     return (

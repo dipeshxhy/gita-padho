@@ -11,12 +11,19 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 
 function App() {
-  const [chapters, setChapters] = useState<ChapterResponse[]>([]);
+  const [chapters, setChapters] = useState<ChapterResponse[]>(() => {
+    const stored = localStorage.getItem("chaptersData");
+    return stored ? JSON.parse(stored) : [];
+  });
 
   useEffect(() => {
-    getAllChapters().then((data) => {
-      setChapters(data);
-    });
+    // Only fetch if no data exists
+    if (chapters.length === 0) {
+      getAllChapters().then((data) => {
+        setChapters(data);
+        localStorage.setItem("chaptersData", JSON.stringify(data));
+      });
+    }
   }, []);
 
   // show card of chapter
