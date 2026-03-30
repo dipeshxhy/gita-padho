@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
+import type { ChapterResponse } from "../utils/api";
 
-const AllChapters = ({ chapters }) => {
+const AllChapters = ({ chapters }: { chapters: ChapterResponse[] }) => {
   function Button({
     verses_count,
     chapterNumber,

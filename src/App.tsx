@@ -49,7 +49,7 @@ function App() {
         <Route path="/slok/:chapterNumber/:slokNumber" element={<Slok />} />
         <Route path="/chapters" element={<AllChapters chapters={chapters} />} />
       </Routes>
-      <Footer chapters={chapters} />
+      <Footer />
     </>
   );
 }
