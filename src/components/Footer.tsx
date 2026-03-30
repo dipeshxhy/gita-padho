@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
         {/* Left Section */}
         <div>
-          <h2 className="text-xl font-semibold mb-2">📖 Geeta Padho</h2>
+          <h2 className="text-xl font-semibold mb-2">📖 Gita Padho</h2>
           <p className="text-sm text-gray-400">
             Learn and explore the timeless wisdom of the Bhagavad Gita.
           </p>
